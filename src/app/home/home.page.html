@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Scanner
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Scan</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <qrcode #parent [qrdata]="formData" [width]="256" [errorCorrectionLevel]="'Q'"></qrcode>
+  
+  <form [formGroup]="CheckinForm">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Employee Name"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input label="Division/Program" placeholder="Enter Division"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input label="Job Title"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input label="Inventory Tag Number(s)"></ion-input>
+      </ion-item>
+
+      <ion-item>      
+        <ion-input label="Make/Model"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Equipment Condtion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea label="Comments/Notes"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Returned By"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Received By"></ion-input>
+      </ion-item>
+
+      <ion-datetime presentation="date" [preferWheel]="true">
+        <span slot="title">Date</span>
+      </ion-datetime>
+
+    </ion-list>
+
+  </form>
+
+  <ion-button expand="full" size="large" (click)="scan()"><ion-icon slot="start" name="scan"></ion-icon>Scanner</ion-button>
+  <ion-button expand="full" size="large" (click)="encode(parent)"><ion-icon name="qr-code"></ion-icon>Test Encode</ion-button>
+
+
+</ion-content>

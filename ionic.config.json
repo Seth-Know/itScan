@@ -1,0 +1,7 @@
+{
+  "name": "itScan",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
